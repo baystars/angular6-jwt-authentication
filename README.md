@@ -1,27 +1,37 @@
 # AngularJWTAuthentication
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+[Angular 5 JWT Authentication\(Full Stack\) \| DevGlan](https://www.devglan.com/spring-security/angular-jwt-authentication)
 
-## Development server
+[GitHub \- only2dhir/angular\-5\-material\-design: This tutorial is about creating a sample application using angular 5 material design\.To develop this app we will be using different angular 5 material components such as form controls, navigation menu, layout and buttons\.](https://github.com/only2dhir/angular-5-material-design)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+ng
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    $ ng new angular-JWT-Authentication
+    $ cd angular-JWT-Authentication
+    
+npm
 
-## Build
+    $ npm i --save @angular/material @angular/cdk
+    $ npm i --save @angular/animations
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+see
 
-## Running unit tests
+* src/style.css
+* src/main.ts
+* src/index.html
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+generate component
 
-## Running end-to-end tests
+    $ ng g c component/login
+    $ ng g c component/user
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+generate service
 
-## Further help
+    $ ng g s service/auth
+    $ ng g s service/user
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+generate module
+
+    $ ng g m core/material
+    $ ng g m app-routing --flat --module=app
