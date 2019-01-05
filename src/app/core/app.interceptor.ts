@@ -8,7 +8,9 @@ import { TokenService } from '../service/token.service';
 
 const TOKEN_HEADER_KEY = 'Authorization';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class Interceptor implements HttpInterceptor {
 
   constructor(private token: TokenService, private router: Router) { }
@@ -17,14 +19,14 @@ export class Interceptor implements HttpInterceptor {
     Observable<HttpSentEvent | HttpHeaderResponse | HttpProgressEvent | HttpResponse<any> | HttpUserEvent<any>> {
     let authReq = req;
     if (this.token.getToken() != null) {
-      authReq = req.clone({ headers: req.headers.set(TOKEN_HEADER_KEY, 'Bearer ' + this .token.getToken())});
+      authReq = req.clone({ headers: req.headers.set(TOKEN_HEADER_KEY, 'Bearer ' + this.token.getToken())});
     }
     return next.handle(authReq).pipe(
       tap(
         (err: any) => {
           if (err instanceof HttpErrorResponse) {
             if (err.status === 401) {
-              this.router.navigate(['user']);
+              this.router.navigate(['user']); // user->login ?
             }
           }
         }

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
+import { User } from '../model/user';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +13,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers() {
+  getUsers(): Observable<User[]> {
     let users = [
       {id: 1, username: 'Dhiraj Ray', salary: 600, age: 57},
       {id: 2, username: 'Tom Jac', salary: 1000, age: 55},

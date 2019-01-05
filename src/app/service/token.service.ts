@@ -6,7 +6,6 @@ const TOKEN_KEY = 'AuthToken';
   providedIn: 'root'
 })
 export class TokenService {
-
   constructor() { }
 
   signOut() {
@@ -15,6 +14,7 @@ export class TokenService {
   }
 
   public saveToken(token: string) {
+    //console.log("token is " + token);
     window.sessionStorage.removeItem(TOKEN_KEY);
     window.sessionStorage.setItem(TOKEN_KEY, token);
   }

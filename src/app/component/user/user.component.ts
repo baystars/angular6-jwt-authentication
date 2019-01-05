@@ -24,6 +24,7 @@ export class UserComponent implements OnInit {
         this.dataSource.data = data;
       }
     );
+    //console.log(sessionStorage.getItem('AuthToken'));
   }
 
   logout(): void {

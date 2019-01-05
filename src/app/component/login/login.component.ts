@@ -18,7 +18,8 @@ export class LoginComponent {
   login(): void {
     this.authService.attemptAuth(this.username, this.password).subscribe(
       data => {
-        this.token.saveToken(data.token);
+        //this.token.saveToken(data.token); // original
+        this.token.saveToken(data.access_token);
         this.router.navigate(['user']);
       }
     );
