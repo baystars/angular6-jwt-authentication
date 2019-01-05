@@ -19,6 +19,8 @@
 
 ## 作成
 
+### Angular-Material
+
 ng
 
     $ ng new angular-JWT-Authentication
@@ -29,7 +31,7 @@ npm
     $ npm i --save @angular/material @angular/cdk
     $ npm i --save @angular/animations
 
-see
+以下も確認
 
 * src/style.css
 * src/main.ts
@@ -53,6 +55,6 @@ generate module
 
 ## 参考
 
-check by curl
+curl
 
     $ curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"username":"test","password":"test"}' http://localhost:5000/api/v1.0/login/
