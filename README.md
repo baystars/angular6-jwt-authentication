@@ -30,6 +30,7 @@ generate service
 
     $ ng g s service/auth
     $ ng g s service/user
+    $ ng g s service/token
 
 generate module
 

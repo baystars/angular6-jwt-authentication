@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  API_URL: 'http://kessel.oroshi.toyoake.or.jp/jwt/api/v1.0/',
+  //API_URL: 'http://kessel.oroshi.toyoake.or.jp:5000/api/v1.0/',
 };
 
 /*
