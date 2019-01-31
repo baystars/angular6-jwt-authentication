@@ -1,7 +1,8 @@
 BASE_HREF = /ng/material-design/
 OUTPUT_PATH = /var/www${BASE_HREF}
+IP=`/sbin/ifconfig | grep 'inet' | head -1 | cut -d ":" -f 2 | cut -d ' ' -f 1`
 
-run: serve-network
+run: serve-network-dev
 
 serve:
 	ng serve --live-reload true
@@ -10,7 +11,10 @@ serve-open:
 	ng serve --open
 
 serve-network:
-	ng serve --host 172.28.2.50 --port 4200 --live-reload true
+	ng serve --host $(IP) --port 4200 --live-reload true
+
+serve-network-dev:
+	ng serve --host $(IP) --port 4200 --live-reload true --configuration=dev
 
 build-prod:
 	ng build --prod --output-path=${OUTPUT_PATH} --base-href=${BASE_HREF}
